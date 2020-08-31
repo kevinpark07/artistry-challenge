@@ -1,0 +1,29 @@
+<% if flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    </ul>
+<% end %>   
+<br>
+<h1>Artist Form</h1>
+<hr>
+<%= form_for @artist do |f| %>
+<label><b>Artist Name:</b></label><br>
+<%= f.text_field :name %>
+<br>
+<br>
+<label><b>Artist Age:</b></label><br>
+<%= f.text_field :age %>
+<br>
+<br>
+<label><b>Artist Title:</b></label><br>
+<%= f.text_field :title %>
+<br>
+<br>
+<label><b>Instrument:</b></label><br>
+<%= f.collection_select :instrument_ids, Instrument.all, :id, :name %>
+<br>
+<br>
+<%= f.submit %>
+<% end %>

@@ -1,0 +1,18 @@
+<h1><b><%= @artist.name %></b></h1>
+<hr>
+<h2><u>Artist Info:</u></h2>
+<ul>
+    <li><b>Age: </b><%= @artist.age %></li>
+    <br>
+    <li><b>Title: </b><%= @artist.title %></li>
+</ul>
+<br>
+<h2><u>Artist Instruments:</u></h2>
+<ul>
+    <% @artist.instruments.each do |instrument| %>
+        <li><%= instrument.name %></li>
+        <% end %>
+</ul>
+<br>
+<br>
+<%= link_to "Return to Index", artists_path %>
